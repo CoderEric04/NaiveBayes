@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9662cd51-e6b0-4b8a-9bed-52ee86e26c58" name="Changes" comment="idk what this is">
-      <change afterPath="$PROJECT_DIR$/src/etnaivebaynes/DataFreq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_csv_1_10_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/etnaivebayes/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/etnaivebaynes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etnaivebaynes/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/etnaivebaynes/ReadCSVFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/etnaivebaynes/ReadCSVFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MLdata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/MLdata.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NaiveBaynes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NaiveBayes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/etnaivebaynes/DataFreq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/etnaivebaynes/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/etnaivebaynes/ReadCSVFile.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +64,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/erict/IdeaProjects/NaiveBaynes/src",
+    "last_opened_file_path": "C:/Users/erict/IdeaProjects/NaiveBayes",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,6 +81,21 @@
       <recent name="C:\Users\erict\IdeaProjects\NaiveBaynes\src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="NaiveBayes" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="NaiveBayes" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,7 +105,9 @@
       <option name="presentableId" value="Default" />
       <updated>1679076374722</updated>
       <workItem from="1679076376469" duration="6382000" />
-      <workItem from="1679237401832" duration="19632000" />
+      <workItem from="1679237401832" duration="22471000" />
+      <workItem from="1679484606535" duration="233000" />
+      <workItem from="1679484890790" duration="2909000" />
     </task>
     <task id="LOCAL-00001" summary="first version">
       <created>1679077553785</created>
