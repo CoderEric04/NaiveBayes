@@ -1,4 +1,13 @@
-﻿Student_gender,Parent_had_own_business,Has_a_part_time_job,Urban_or_rural_address,Studies_business_subjects,Become_an_Entrepreneur
+@relation MLdata
+
+@attribute ﻿Student_gender {Female,Male}
+@attribute Parent_had_own_business {Yes,No}
+@attribute Has_a_part_time_job {No,Yes}
+@attribute Urban_or_rural_address {Rural,Urban}
+@attribute Studies_business_subjects {No,Yes}
+@attribute Become_an_Entrepreneur {Yes,No}
+
+@data
 Female,Yes,No,Rural,No,Yes
 Male,No,Yes,Urban,Yes,No
 Female,Yes,Yes,Urban,Yes,Yes

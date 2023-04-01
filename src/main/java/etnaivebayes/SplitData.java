@@ -35,16 +35,14 @@ public class SplitData {
 
     public int numTraining() throws IOException {
         List<List<String>> data = readCSV("MLdata.csv");
-        int sizeOfTraining = (int) (0.7 * data.size());
 
-        return sizeOfTraining;
+        return (int) (0.7 * data.size());
     }
 
     public int numTesting() throws IOException {
         List<List<String>> data = readCSV("MLdata.csv");
-        int sizeOfTesting = data.size() - numTraining();
 
-        return sizeOfTesting;
+        return data.size() - numTraining();
     }
 
     public List<List<String>> trainingData() throws IOException {
@@ -58,9 +56,10 @@ public class SplitData {
     }
 
     public List<List<String>> testingData() throws IOException {
+        List<List<String>> data = readCSV("MLdata.csv");
         List<List<String>> testingData = new ArrayList<>();
 
-        for (int i = 0; i < numTesting(); i++) {
+        for (int i = numTraining(); i < data.size(); i++) {
             testingData.add(new ArrayList<>(readCSV("MLdata.csv").get(i)));
         }
 
