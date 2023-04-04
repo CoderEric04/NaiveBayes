@@ -1,69 +1,37 @@
 package etnaivebayes;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.List;
+import weka.core.Instances;
+import weka.filters.Filter;
+import weka.filters.unsupervised.instance.Randomize;
 
 public class SplitData {
-    String file;
+    private Instances dataset;
+    private int trainSize;
+    private int testSize;
 
-    public SplitData(String file){
-        this.file = file;
+    public SplitData(Instances dataset){
+        this.dataset = dataset;
     }
 
-    public List<List<String>> readCSV(String file) throws IOException {
-        Reader filereader = new FileReader(file);
-        CSVParser parser = new CSVParser(filereader, CSVFormat.DEFAULT);
-        List<List<String>> data = new ArrayList<>();
+    public Instances randData() throws Exception {
+        Randomize rand = new Randomize();
+        rand.setInputFormat(dataset);
+        Instances randData = Filter.useFilter(dataset, rand);
 
-        for (CSVRecord record : parser) {
-            List<String> row = new ArrayList<>();
-            for (String value : record) {
-                row.add(value);
-            }
-            data.add(row);
-        }
-
-        return data;
+        return randData;
     }
 
-    public int numTraining() throws IOException {
-        List<List<String>> data = readCSV("MLdata.csv");
-
-        return (int) (0.7 * data.size());
-    }
-
-    public int numTesting() throws IOException {
-        List<List<String>> data = readCSV("MLdata.csv");
-
-        return data.size() - numTraining();
-    }
-
-    public List<List<String>> trainingData() throws IOException {
-        List<List<String>> trainingData = new ArrayList<>();
-
-        for (int i = 0; i < numTraining(); i++) {
-            trainingData.add(new ArrayList<>(readCSV("MLdata.csv").get(i)));
-        }
+    public Instances trainingData() throws Exception {
+        trainSize = (int) Math.round(randData().numInstances() * 0.7);
+        Instances trainingData = new Instances(randData(), 0, trainSize);
 
         return trainingData;
     }
 
-    public List<List<String>> testingData() throws IOException {
-        List<List<String>> data = readCSV("MLdata.csv");
-        List<List<String>> testingData = new ArrayList<>();
-
-        for (int i = numTraining(); i < data.size(); i++) {
-            testingData.add(new ArrayList<>(readCSV("MLdata.csv").get(i)));
-        }
+    public Instances testingData() throws Exception {
+        testSize = randData().numInstances() - trainSize;
+        Instances testingData = new Instances(randData(), trainSize, testSize);
 
         return testingData;
     }
-
 }
