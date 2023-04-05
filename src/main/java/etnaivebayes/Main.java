@@ -1,9 +1,10 @@
 package etnaivebayes;
 
+import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Instances;
 
-//Student gender,Parent/ guardian had own business,Has a part time job,Urban or rural address,Studies business subjects,Become an Entrepreneur
+//Student gender,Parent/ guardian had own business,Has a part-time job,Urban or rural address,Studies business subjects,Become an Entrepreneur
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -13,7 +14,6 @@ public class Main {
         Instances dataset = getData.withClasses();
 
         SplitData splitData = new SplitData(dataset);
-
         Instances trainingData = splitData.trainingData();
         Instances testingData = splitData.testingData();
 
@@ -23,8 +23,9 @@ public class Main {
 
         TrainAndTest trainAndTest = new TrainAndTest(trainingData, testingData);
         NaiveBayes naiveBayes = trainAndTest.train();
-        trainAndTest.test();
+        Evaluation eval = trainAndTest.test();
 
+//Test if evaluation accurate
 //        double amount = 0;
 //        double correct = 0;
 //        double accuracy;
@@ -47,8 +48,7 @@ public class Main {
 //
 //        System.out.println("The prediction is " + accuracy + "% accurate");
 
-        PredictInstance predictInstance = new PredictInstance(trainingData, naiveBayes);
-        predictInstance.predict();
+        GUI gui1 = new GUI(naiveBayes, trainingData, eval);
     }
 }
 

@@ -4,30 +4,35 @@ import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Instance;
 import weka.core.Instances;
 
+import java.util.ArrayList;
+
 public class PredictInstance {
-    private Instances trainingData;
-    private NaiveBayes naiveBayes;
-    public PredictInstance(Instances trainingData, NaiveBayes naiveBayes){
+    private final Instances trainingData;
+    private final NaiveBayes naiveBayes;
+    private final ArrayList<String> values;
+    public PredictInstance(Instances trainingData, NaiveBayes naiveBayes, ArrayList<String> values){
         this.trainingData = trainingData;
         this.naiveBayes = naiveBayes;
+        this.values = values;
     }
 
-    public Instance enterInstance(){
+    public Instance enterInstance(ArrayList<String> values){
         Instance addValues = new Instance(trainingData.numAttributes());
         addValues.setDataset(trainingData);
 
-        addValues.setValue(0,"Female");
-        addValues.setValue(1,"Yes");
-        addValues.setValue(2,"No");
-        addValues.setValue(3,"Rural");
-        addValues.setValue(4,"No");
+        int i = 0;
+        for (String value : values) {
+            addValues.setValue(i, value);
+            i++;
+        }
 
         return addValues;
     }
 
-    public void predict() throws Exception {
-        double predict = naiveBayes.classifyInstance(enterInstance());
+    public String predict() throws Exception {
+        double predict = naiveBayes.classifyInstance(enterInstance(values));
         String predClass = trainingData.classAttribute().value((int)predict);
-        System.out.println("Class predicted: " + predClass);
+
+        return predClass;
     }
 }

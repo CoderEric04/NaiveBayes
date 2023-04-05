@@ -5,8 +5,8 @@ import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Instances;
 
 public class TrainAndTest {
-    private Instances trainingData;
-    private Instances testingData;
+    private final Instances trainingData;
+    private final Instances testingData;
 
     public TrainAndTest(Instances trainingData, Instances testingData){
         this.trainingData = trainingData;
@@ -20,10 +20,12 @@ public class TrainAndTest {
         return naiveBayes;
     }
 
-    public void test() throws Exception {
+    public Evaluation test() throws Exception {
         Evaluation eval = new Evaluation(trainingData);
         eval.evaluateModel(train(), testingData);
 
         System.out.println(eval.toSummaryString());
+
+        return eval;
     }
 }
