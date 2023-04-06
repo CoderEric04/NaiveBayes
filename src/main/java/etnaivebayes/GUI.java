@@ -15,47 +15,58 @@ public class GUI extends JFrame {
     private final ArrayList<String> values;
 
     public GUI(NaiveBayes naiveBayes, Instances trainingData, Evaluation eval){
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new FlowLayout());
+        JFrame frame1 = new JFrame("Naive Bayes Classifier");
+
+        JPanel panel1 = new JPanel();
+        frame1.add(panel1);
+
+        setDefaultCloseOperation(frame1.EXIT_ON_CLOSE);
+        panel1.setLayout(new FlowLayout());
+
+        JLabel rules = new JLabel("Only enter choices given in brackets, each entry must have capital letter");
+        rules.setHorizontalAlignment(JLabel.CENTER);
+        rules.setBorder(BorderFactory.createEmptyBorder(10, 0, 25, 0));
+        frame1.getContentPane().add(rules, BorderLayout.NORTH);
 
         JLabel genderLabel = new JLabel("Gender (Male/Female): ");
         genderField = new JTextField();
         genderField.setPreferredSize(new Dimension(50,20));
-        add(genderLabel);
-        add(genderField);
+        panel1.add(genderLabel);
+        panel1.add(genderField);
 
         JLabel hasBusinessParentLabel = new JLabel("Parent owns business (Yes/No): ");
         hasBusinessParentField = new JTextField();
         hasBusinessParentField.setPreferredSize(new Dimension(50,20));
-        add(hasBusinessParentLabel);
-        add(hasBusinessParentField);
+        panel1.add(hasBusinessParentLabel);
+        panel1.add(hasBusinessParentField);
 
         JLabel hasJobLabel = new JLabel("Has job (Yes/No): ");
         hasJobField = new JTextField();
         hasJobField.setPreferredSize(new Dimension(50,20));
-        add(hasJobLabel);
-        add(hasJobField);
+        panel1.add(hasJobLabel);
+        panel1.add(hasJobField);
 
         JLabel livingAreaLabel = new JLabel("Lives in urban or rural area (Urban/Rural)");
         livingAreaField = new JTextField();
         livingAreaField.setPreferredSize(new Dimension(50,20));
-        add(livingAreaLabel);
-        add(livingAreaField);
+        panel1.add(livingAreaLabel);
+        panel1.add(livingAreaField);
 
         JLabel studiesBusinessLabel = new JLabel("Studies business (Yes/No): ");
         studiesBusinessField = new JTextField();
         studiesBusinessField.setPreferredSize(new Dimension(50,20));
-        add(studiesBusinessLabel);
-        add(studiesBusinessField);
+        panel1.add(studiesBusinessLabel);
+        panel1.add(studiesBusinessField);
 
         JButton enterButton = new JButton("Enter");
         enterButton.addActionListener(new EnterInstancesButtonListener(naiveBayes, trainingData, eval));
-        add(enterButton);
+        frame1.getContentPane().add(enterButton, BorderLayout.SOUTH);
 
         values = new ArrayList<>();
 
-        pack();
-        setVisible(true);
+        //frame1.pack();
+        frame1.setSize(1000, 200);
+        frame1.setVisible(true);
     }
 
     private class EnterInstancesButtonListener implements ActionListener{
@@ -85,7 +96,19 @@ public class GUI extends JFrame {
                 throw new RuntimeException(ex);
             }
 
+
+            double[][] confusionMatrix = eval.confusionMatrix();
+
+            System.out.println("Confusion Matrix:");
+            for (int i = 0; i < confusionMatrix.length; i++) {
+                for (int j = 0; j < confusionMatrix[i].length; j++) {
+                    System.out.print(confusionMatrix[i][j] + " ");
+                }
+                System.out.println();
+            }
+
             JOptionPane.showMessageDialog(GUI.this, "Class predicted is " + pred + " with an accuracy of " + eval.pctCorrect() + "%");
+
         }
     }
 }
