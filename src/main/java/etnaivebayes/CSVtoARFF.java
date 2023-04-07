@@ -24,7 +24,7 @@ public class CSVtoARFF {
         return "MLdata.arff";
     }
 
-    public Instances withClasses() throws IOException {
+    public Instances getDataWithClasses() throws IOException {
         Instances dataset = new Instances(new BufferedReader(new FileReader(convert())));
 
         //Set last attribute as classes

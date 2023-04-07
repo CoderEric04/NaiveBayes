@@ -10,6 +10,7 @@ public class PredictInstance {
     private final Instances trainingData;
     private final NaiveBayes naiveBayes;
     private final ArrayList<String> values;
+
     public PredictInstance(Instances trainingData, NaiveBayes naiveBayes, ArrayList<String> values){
         this.trainingData = trainingData;
         this.naiveBayes = naiveBayes;
@@ -17,16 +18,16 @@ public class PredictInstance {
     }
 
     public Instance enterInstance(ArrayList<String> values){
-        Instance addValues = new Instance(trainingData.numAttributes());
-        addValues.setDataset(trainingData);
+        Instance addedValues = new Instance(trainingData.numAttributes());
+        addedValues.setDataset(trainingData);
 
         int i = 0;
         for (String value : values) {
-            addValues.setValue(i, value);
+            addedValues.setValue(i, value);
             i++;
         }
 
-        return addValues;
+        return addedValues;
     }
 
     public String predict() throws Exception {

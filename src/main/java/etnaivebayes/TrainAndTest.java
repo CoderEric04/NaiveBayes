@@ -26,6 +26,16 @@ public class TrainAndTest {
 
         System.out.println(eval.toSummaryString());
 
+        double[][] confusionMatrix = eval.confusionMatrix();
+
+        System.out.println("Confusion Matrix:");
+        for (int i = 0; i < confusionMatrix.length; i++) {
+            for (int j = 0; j < confusionMatrix[i].length; j++) {
+                System.out.print(confusionMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
         return eval;
     }
 }

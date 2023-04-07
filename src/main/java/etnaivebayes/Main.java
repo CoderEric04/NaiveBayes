@@ -11,7 +11,7 @@ public class Main {
 
         CSVtoARFF getData = new CSVtoARFF();
 
-        Instances dataset = getData.withClasses();
+        Instances dataset = getData.getDataWithClasses();
 
         SplitData splitData = new SplitData(dataset);
         Instances trainingData = splitData.trainingData();
