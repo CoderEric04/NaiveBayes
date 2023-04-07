@@ -48,9 +48,9 @@ public class Main {
 //
 //        System.out.println("The prediction is " + accuracy + "% accurate");
 
+
+
         GUI gui1 = new GUI(naiveBayes, trainingData, eval);
-
-
     }
 }
 

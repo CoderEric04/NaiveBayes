@@ -5,9 +5,8 @@ import weka.filters.Filter;
 import weka.filters.unsupervised.instance.Randomize;
 
 public class SplitData {
-    private Instances dataset;
+    private final Instances dataset;
     private int trainSize;
-    private int testSize;
 
     public SplitData(Instances dataset){
         this.dataset = dataset;
@@ -16,22 +15,19 @@ public class SplitData {
     public Instances randData() throws Exception {
         Randomize rand = new Randomize();
         rand.setInputFormat(dataset);
-        Instances randData = Filter.useFilter(dataset, rand);
 
-        return randData;
+        return Filter.useFilter(dataset, rand);
     }
 
     public Instances trainingData() throws Exception {
         trainSize = (int) Math.round(randData().numInstances() * 0.7);
-        Instances trainingData = new Instances(randData(), 0, trainSize);
 
-        return trainingData;
+        return new Instances(randData(), 0, trainSize);
     }
 
     public Instances testingData() throws Exception {
-        testSize = randData().numInstances() - trainSize;
-        Instances testingData = new Instances(randData(), trainSize, testSize);
+        int testSize = randData().numInstances() - trainSize;
 
-        return testingData;
+        return new Instances(randData(), trainSize, testSize);
     }
 }

@@ -79,7 +79,7 @@ public class GUI extends JFrame {
             this.trainingData = trainingData;
             this.eval = eval;
         }
-        public void actionPerformed(ActionEvent e){
+        public void actionPerformed(ActionEvent e) {
             String pred;
 
             values.clear();
@@ -96,7 +96,20 @@ public class GUI extends JFrame {
                 throw new RuntimeException(ex);
             }
 
-            JOptionPane.showMessageDialog(GUI.this, "Class predicted is " + pred + " with an accuracy of " + eval.pctCorrect() + "%");
+            double[] prob;
+            try {
+                prob = naiveBayes.distributionForInstance(predictInstance.enterInstance(predictInstance.getValues()));
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+
+            for (int i = 0; i < prob.length; i++) {
+                prob[i] = prob[i] * 100;
+            }
+
+            JOptionPane.showMessageDialog(GUI.this, "There is a " + Math.round(prob[0]) + "% chance of becoming an entrepreneur and a "
+                    + Math.round(prob[1]) + "% chance of not becoming an entrepreneur. " +
+                    "Class predicted is " + pred + " with an accuracy of " + Math.round(eval.pctCorrect()) + "%");
 
         }
     }

@@ -17,6 +17,10 @@ public class PredictInstance {
         this.values = values;
     }
 
+    public ArrayList<String> getValues(){
+        return values;
+    }
+
     public Instance enterInstance(ArrayList<String> values){
         Instance addedValues = new Instance(trainingData.numAttributes());
         addedValues.setDataset(trainingData);
@@ -32,8 +36,7 @@ public class PredictInstance {
 
     public String predict() throws Exception {
         double predict = naiveBayes.classifyInstance(enterInstance(values));
-        String predClass = trainingData.classAttribute().value((int)predict);
 
-        return predClass;
+        return trainingData.classAttribute().value((int)predict);
     }
 }
