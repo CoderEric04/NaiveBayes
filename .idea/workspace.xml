@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9662cd51-e6b0-4b8a-9bed-52ee86e26c58" name="Changes" comment="idk what this is">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/etnaivebayes/CSVtoARFF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/etnaivebayes/CSVtoARFF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/etnaivebayes/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/etnaivebayes/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/etnaivebayes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/etnaivebayes/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/etnaivebayes/PredictInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/etnaivebayes/PredictInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/etnaivebayes/SplitData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/etnaivebayes/SplitData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/etnaivebayes/TrainAndTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/etnaivebayes/TrainAndTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/etnaivebayes/CSVtoARFF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/etnaivebayes/CSVtoARFF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/etnaivebayes/GUI$EnterInstancesButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/etnaivebayes/GUI$EnterInstancesButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/etnaivebayes/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/etnaivebayes/GUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/etnaivebayes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/etnaivebayes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/etnaivebayes/PredictInstance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/etnaivebayes/PredictInstance.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/etnaivebayes/SplitData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/etnaivebayes/SplitData.class" afterDir="false" />
@@ -89,7 +96,7 @@
       <workItem from="1679237401832" duration="22471000" />
       <workItem from="1679484606535" duration="233000" />
       <workItem from="1679484890790" duration="30088000" />
-      <workItem from="1680379503268" duration="48001000" />
+      <workItem from="1680379503268" duration="55068000" />
     </task>
     <task id="LOCAL-00001" summary="first version">
       <created>1679077553785</created>

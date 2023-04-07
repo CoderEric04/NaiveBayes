@@ -17,14 +17,19 @@ public class PredictInstance {
         this.values = values;
     }
 
+    //getter for list containing instance values
     public ArrayList<String> getValues(){
         return values;
     }
 
+    //method that creates new instance
     public Instance enterInstance(ArrayList<String> values){
+        //create new instance with number of attributes contained in training data
         Instance addedValues = new Instance(trainingData.numAttributes());
+        //set reference to training dataset
         addedValues.setDataset(trainingData);
 
+        //add values in array list into instance
         int i = 0;
         for (String value : values) {
             addedValues.setValue(i, value);
@@ -34,9 +39,12 @@ public class PredictInstance {
         return addedValues;
     }
 
+    //method that predicts class of instance
     public String predict() throws Exception {
+        //classifies the given instance, 0 for no, 1 for yes
         double predict = naiveBayes.classifyInstance(enterInstance(values));
 
+        //returns yes or no for classification
         return trainingData.classAttribute().value((int)predict);
     }
 }
