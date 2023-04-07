@@ -59,3 +59,7 @@ extra instances.
 - A confusion matrix with other extra information will also be printed stdout.
 - You can add the extra instances through the csv as a new arff file replaces the
 old one when ran.
+
+### What I would add with more time:
+- Create extra classification methods other than naive bayes to compare confusion
+matrices and see which one is more affective.
