@@ -8,6 +8,12 @@ The classification is: </br>
 Becomes and entrepreneur </br> </br>
 Many classes are used to create this classifier.
 
+## Table of Contents
+- [Classes](#classes)
+- [Weka](#weka)
+- [Usage + Optional Features](#usage--optional-features)
+- [What would I add?](#what-i-would-add-with-more-time-)
+
 ## Classes
 These classes contain various constructors, methods, encapsulated attributes and
 various other core functionality.
@@ -50,7 +56,7 @@ to use it:
 3. Select add and enter file path to jar file.
 4. Using maven, [add the dependency](https://mvnrepository.com/artifact/nz.ac.waikato.cms.weka/weka-stable/3.8.0). 
 
-## Usage + Optional features
+## Usage + Optional Features
 - After running, enter the features.
 - Select the enter button.
 - This will print out the classification predicted.
